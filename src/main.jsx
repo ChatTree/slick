@@ -3,8 +3,9 @@ import 'jquery';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SongQueue from './components/SongQueue.jsx';
-import SongPlayer from './components/SongPlayer.jsx'
-import Songs from './components/Songs.jsx'
+import SongPlayer from './components/SongPlayer.jsx';
+import Songs from './components/Songs.jsx';
+import SearchBox from './components/SearchBox.jsx';
 
 const socket = io();
 
@@ -23,7 +24,6 @@ class Slick extends React.Component {
     this.handleServerPlayCurrentSongEvent = this.handleServerPlayCurrentSongEvent.bind(this);
     this.handleServerPauseCurrentSongEvent = this.handleServerPauseCurrentSongEvent.bind(this);
     this.onEnded = this.onEnded.bind(this);
-
   }
 
   newSongClick(i) {
@@ -99,12 +99,14 @@ class Slick extends React.Component {
           songInfo={this.state.songInfo}
           handleNewSongClick={this.newSongClick}
           />
+        <SearchBox
+          />
       </div>
     )
   }
 }
 
 ReactDOM.render(
-  <Slick hostAddress="YOUR_IP_ADDRESS:3000"/>,
+  <Slick hostAddress="http://localhost:3000"/>,
   document.getElementById('content')
 )
