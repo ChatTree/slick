@@ -97,11 +97,13 @@ audio {
 }
 #login-button,
 .loginFormWrap {
-  background-color: purple;
+  background-color: black;
+  color: white;
 }
 #register-button,
 .registerFormWrap {
-  background-color: yellow;
+  background-color: white;
+}
 
 .songSearchBtn {
 
@@ -115,7 +117,7 @@ audio {
   font-size: 25px;
   position: absolute;
   top: 150px;
-  left: 805px;
+  left: 65%;
 
 }
 

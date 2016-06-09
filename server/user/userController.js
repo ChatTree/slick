@@ -5,7 +5,6 @@ const User = require('./userModel')
 module.exports = {
 	createUser: function(request, response){
 		let userInfo = request.body
-		console.log(userInfo)
 		User.sync().then(()=>{
 			return User.create(request.body)
 		})
